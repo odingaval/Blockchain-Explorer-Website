@@ -61,6 +61,9 @@ blockchain-blog/
 
 
 
+
+
+
 🛠 **Development Setup**
 
 
@@ -115,7 +118,10 @@ Git for version control
 📜 **License**
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-🙏 Acknowledgments
+
+
+
+🙏 **Acknowledgments**
 
 Inspired by blockchain developer documentation
 
