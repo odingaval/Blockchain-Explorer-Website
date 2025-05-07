@@ -1,4 +1,5 @@
 **Blockchain Explorer - Technical Blog**
+
 **📝 Project Overview**
 
 Blockchain Explorer is a comprehensive technical blog focused on deep dives into blockchain technology, cryptocurrencies, and decentralized systems. This multi-page website features:
@@ -14,6 +15,7 @@ Responsive design for all devices
 Modern web development practices
 
 🚀 **Features**
+
 📚 **Article Pages**
 
 Blockchain Basics: Interactive block visualization and hashing demo
@@ -21,6 +23,8 @@ Blockchain Basics: Interactive block visualization and hashing demo
 Smart Contracts: Solidity code examples with explanations
 
 Crypto Security: Security best practices and threat analysis
+
+
 
 🛠 **Technical Highlights**
 
@@ -33,6 +37,8 @@ Dark Mode: User-friendly dark/light theme toggle
 Semantic HTML5: Proper document structure
 
 Accessibility: Skip links, ARIA labels, and proper contrast
+
+
 
 📦 **Project Structure**
 
@@ -52,7 +58,12 @@ blockchain-blog/
 ├── images/                 # All images
 └── assets/                 # Additional assets
 
+
+
+
 🛠 **Development Setup**
+
+
 **Prerequisites**
 
 Modern web browser (Chrome, Firefox, Edge)
@@ -60,6 +71,7 @@ Modern web browser (Chrome, Firefox, Edge)
 Code editor (VS Code recommended)
 
 (Optional) Local web server for testing
+
 
 **Quick Start**
 
@@ -69,6 +81,7 @@ Open index.html in your browser
 
 Explore the different sections
 
+
 **Customization**
 
 Content: Edit HTML files to update articles
@@ -77,11 +90,13 @@ Styling: Modify styles.css for design changes
 
 Interactivity: Update main.js for behavior changes
 
+
+
 🧰 **Technologies Used**
 
-Frontend: HTML5, CSS3, JavaScript
+**Frontend**: HTML5, CSS3, JavaScript
 
- Libraries:
+ **Libraries:**
 
 Font Awesome (icons)
 
@@ -89,11 +104,13 @@ Prism.js (code highlighting)
 
 Chart.js (data visualization)
 
+
 **Tools**:
 
 Visual Studio Code
 
 Git for version control
+
 
 📜 **License**
 
