@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deep dive into blockchain technology, cryptocurrencies, and decentralized applications">
+    <title>Blockchain Explorer | Deep Tech Insights</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Skip to Content Link (Accessibility) -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/b(2).png" alt="Blockchain Explorer Logo" width="180">
+                </a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Articles <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="articles/blockchain-basics.html">Blockchain Basics</a></li>
+                            <li><a href="articles/smart-contracts.html">Smart Contracts</a></li>
+                            <li><a href="articles/crypto-security.html">Crypto Security</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Exploring Blockchain Technology</h1>
+                <p>Deep technical insights into decentralized systems, cryptography, and Web3 applications</p>
+                <a href="#featured-articles" class="btn">Start Learning</a>
+            </div>
+        </section>
+        
+        <!-- Featured Articles -->
+        <section id="featured-articles" class="featured-articles">
+            <div class="container">
+                <h2>Featured Articles</h2>
+                <div class="article-grid">
+                    <!-- Article Card 1 -->
+                    <article class="article-card">
+                        <img src="images/image1.png" alt="Blockchain Fundamentals">
+                        <div class="article-content">
+                            <h3><a href="articles/blockchain-basics.html">Blockchain Fundamentals: How It Really Works</a></h3>
+                            <p class="meta">Posted on <time datetime="2023-05-15">May 15, 2023</time> | <span class="read-time">8 min read</span></p>
+                            <p>Explore the cryptographic foundations of blockchain technology and understand how distributed consensus works.</p>
+                            <a href="articles/blockchain-basics.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article Card 2 -->
+                    <article class="article-card">
+                        <img src="images/image2.png" alt="Smart Contracts">
+                        <div class="article-content">
+                            <h3><a href="articles/smart-contracts.html">Smart Contracts: Code as Law</a></h3>
+                            <p class="meta">Posted on <time datetime="2023-06-02">June 2, 2023</time> | <span class="read-time">12 min read</span></p>
+                            <p>Dive into Ethereum's smart contract architecture, gas optimization techniques, and security best practices.</p>
+                            <a href="articles/smart-contracts.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    
+                    <!-- Article Card 3 -->
+                    <article class="article-card">
+                        <img src="../images/image3.png" alt="Crypto Security">
+                        <div class="article-content">
+                            <h3><a href="articles/crypto-security.html">Advanced Crypto Security Techniques</a></h3>
+                            <p class="meta">Posted on <time datetime="2023-06-18">June 18, 2023</time> | <span class="read-time">15 min read</span></p>
+                            <p>Learn about multi-sig wallets, cold storage solutions, and cryptographic key management for maximum security.</p>
+                            <a href="articles/crypto-security.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Signup -->
+        <section class="newsletter">
+            <div class="container">
+                <h2>Stay Updated</h2>
+                <p>Subscribe to our newsletter for weekly deep dives into blockchain technology</p>
+                <form id="newsletter-form" class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+                <div id="newsletter-message" class="message"></div>
+            </div>
+        </section>
+        
+        <!-- Interactive Blockchain Demo -->
+        <section class="blockchain-demo">
+            <div class="container">
+                <h2>Interactive Blockchain Demo</h2>
+                <div class="demo-container">
+                    <div class="blockchain-visualization" id="blockchain-visual">
+                        <!-- Blocks will be added here via JavaScript -->
+                    </div>
+                    <div class="demo-controls">
+                        <button id="add-block-btn" class="btn">Add Block</button>
+                        <button id="mine-block-btn" class="btn">Mine Block</button>
+                        <button id="tamper-btn" class="btn">Simulate Tampering</button>
+                    </div>
+                    <div class="demo-output" id="demo-output">
+                        <p>Click "Add Block" to start building your blockchain</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Blockchain Explorer</h3>
+                    <p>Providing technical deep dives into blockchain technology since 2023.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="articles/">Articles</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Blockchain Explorer. All rights reserved.</p>
+                <p class="disclaimer">This site is for educational purposes only. Not financial advice.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

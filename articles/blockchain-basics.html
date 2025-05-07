@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn the fundamental concepts of blockchain technology - how blocks are created, chained, and secured through cryptography">
+    <title>Blockchain Fundamentals | Blockchain Explorer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Prism JS for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-solidity.min.js"></script>
+</head>
+<body>
+    <!-- Skip to Content Link (Accessibility) -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/b(2).png" alt="Blockchain Explorer Logo" width="180">
+                </a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Articles <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blockchain-basics.html" class="active">Blockchain Basics</a></li>
+                            <li><a href="smart-contracts.html">Smart Contracts</a></li>
+                            <li><a href="crypto-security.html">Crypto Security</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../resources.html">Resources</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Article Header -->
+        <article class="article-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a> &raquo; <a href="blockchain-basics.html">Blockchain Basics</a>
+                </div>
+                <h1>Blockchain Fundamentals: How It Really Works</h1>
+                <div class="article-meta">
+                    <span class="author">By Alex Chen</span>
+                    <span class="date">Posted on <time datetime="2023-05-15">May 15, 2023</time></span>
+                    <span class="read-time">8 min read</span>
+                </div>
+                <div class="tags">
+                    <span class="tag">blockchain</span>
+                    <span class="tag">cryptography</span>
+                    <span class="tag">consensus</span>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article Content -->
+        <article class="article-content">
+            <div class="container">
+                <figure class="article-image">
+                    <img src="../images/image4.png" alt="Blockchain technology visualization">
+                    <figcaption>Visual representation of blockchain's distributed ledger</figcaption>
+                </figure>
+                
+                <section>
+                    <h2>What is a Blockchain?</h2>
+                    <p>A blockchain is a decentralized, distributed digital ledger that records transactions across many computers in such a way that the registered transactions cannot be altered retroactively. At its core, a blockchain is:</p>
+                    <ul>
+                        <li><strong>Immutable</strong> - Once data is recorded, it cannot be changed</li>
+                        <li><strong>Distributed</strong> - Copies exist across many nodes in a network</li>
+                        <li><strong>Transparent</strong> - All transactions are visible to participants</li>
+                        <li><strong>Secure</strong> - Uses cryptographic techniques to ensure validity</li>
+                    </ul>
+                    
+                    <div class="interactive-demo">
+                        <h3>Block Structure Explorer</h3>
+                        <div class="block-visualization">
+                            <div class="block">
+                                <div class="block-header">Block #<span id="block-number">1</span></div>
+                                <div class="block-data">
+                                    <label>Data:</label>
+                                    <textarea id="block-data" rows="3">Sample transaction data</textarea>
+                                </div>
+                                <div class="block-hash">
+                                    <label>Previous Hash:</label>
+                                    <input type="text" id="prev-hash" value="0000000000" readonly>
+                                </div>
+                                <div class="block-hash">
+                                    <label>Current Hash:</label>
+                                    <input type="text" id="current-hash" value="" readonly>
+                                </div>
+                                <div class="block-nonce">
+                                    <label>Nonce:</label>
+                                    <input type="text" id="nonce" value="0" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="block-controls">
+                            <button id="calculate-hash" class="btn">Calculate Hash</button>
+                            <button id="mine-block" class="btn">Mine Block</button>
+                            <button id="tamper-data" class="btn">Tamper Data</button>
+                        </div>
+                        <div class="demo-output" id="block-demo-output">
+                            <p>Click "Calculate Hash" to see how block hashing works</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Key Components of Blockchain</h2>
+                    
+                    <h3>1. Cryptographic Hashing</h3>
+                    <p>Blockchains use cryptographic hash functions like SHA-256 to create a digital fingerprint of data. A hash function has three key properties:</p>
+                    <ul>
+                        <li><strong>Deterministic</strong> - Same input always produces same output</li>
+                        <li><strong>Fast Computation</strong> - Hash can be quickly calculated</li>
+                        <li><strong>Pre-image Resistance</strong> - Extremely hard to reverse</li>
+                    </ul>
+                    
+                    <div class="code-block">
+                        <h4>Simple Hash Function in JavaScript</h4>
+                        <pre><code class="language-javascript">// Simplified hash function example
+function simpleHash(input) {
+    let hash = 0;
+    for (let i = 0; i < input.length; i++) {
+        const char = input.charCodeAt(i);
+        hash = (hash << 5) - hash + char;
+        hash &= hash; // Convert to 32bit integer
+    }
+    return hash.toString(36);
+}
+
+console.log(simpleHash("Blockchain")); // Example output: "1smzn5k"</code></pre>
+                    </div>
+                    
+                    <h3>2. Blocks and Chain Structure</h3>
+                    <p>Each block contains:</p>
+                    <ul>
+                        <li>Transaction data</li>
+                        <li>Timestamp</li>
+                        <li>Reference to previous block's hash</li>
+                        <li>Its own cryptographic hash</li>
+                        <li>Nonce (number used once for mining)</li>
+                    </ul>
+                    
+                    <div class="comparison-table">
+                        <h4>Blockchain vs Traditional Database</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Blockchain</th>
+                                    <th>Traditional Database</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Control</td>
+                                    <td>Decentralized</td>
+                                    <td>Centralized</td>
+                                </tr>
+                                <tr>
+                                    <td>Immutable</td>
+                                    <td>Yes</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td>Transparency</td>
+                                    <td>High</td>
+                                    <td>Low</td>
+                                </tr>
+                                <tr>
+                                    <td>Consensus</td>
+                                    <td>Required</td>
+                                    <td>Not needed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Consensus Mechanisms</h2>
+                    <p>Blockchains use consensus algorithms to agree on the state of the ledger. The two most common are:</p>
+                    
+                    <h3>Proof of Work (PoW)</h3>
+                    <p>Used by Bitcoin, miners compete to solve complex mathematical problems to validate transactions and create new blocks.</p>
+                    
+                    <div class="code-block">
+                        <h4>Simplified Mining Simulation</h4>
+                        <pre><code class="language-javascript">function mineBlock(block, difficulty) {
+    while (!block.hash.startsWith('0'.repeat(difficulty))) {
+        block.nonce++;
+        block.hash = calculateHash(block);
+    }
+    return block;
+}
+
+// Mining a block with difficulty 2 (requires hash starting with '00')
+const minedBlock = mineBlock(newBlock, 2);</code></pre>
+                    </div>
+                    
+                    <h3>Proof of Stake (PoS)</h3>
+                    <p>Validators are chosen based on the amount of cryptocurrency they hold and are willing to "stake" as collateral.</p>
+                    
+                    <div class="comparison-chart">
+                        <h4>PoW vs PoS Comparison</h4>
+                        <canvas id="consensusChart" width="400" height="200"></canvas>
+                    </div>
+                </section>
+                
+                <section class="article-actions">
+                    <div class="share-buttons">
+                        <span>Share this article:</span>
+                        <a href="#" class="social-share twitter" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-share linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-share reddit" aria-label="Share on Reddit"><i class="fab fa-reddit"></i></a>
+                    </div>
+                    <div class="article-nav">
+                        <a href="smart-contracts.html" class="btn next-article">Next: Smart Contracts <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </section>
+                
+                <section class="comments-section">
+                    <h2>Discussion</h2>
+                    <div id="disqus_thread"></div>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
+            </div>
+        </article>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Blockchain Explorer</h3>
+                    <p>Providing technical deep dives into blockchain technology since 2023.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="blockchain-basics.html">Articles</a></li>
+                        <li><a href="../resources.html">Resources</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Blockchain Explorer. All rights reserved.</p>
+                <p class="disclaimer">This site is for educational purposes only. Not financial advice.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    
+    <!-- Chart.js for comparison charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+</body>
+</html>

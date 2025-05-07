@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how smart contracts work, their architecture on Ethereum, and how to write basic contracts in Solidity">
+    <title>Smart Contracts Explained | Blockchain Explorer</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Prism JS for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-okaidia.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-solidity.min.js"></script>
+</head>
+<body>
+    <!-- Skip to Content Link (Accessibility) -->
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/b(2).png" alt="Blockchain Explorer Logo" width="180">
+                </a>
+            </div>
+            
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Articles <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blockchain-basics.html">Blockchain Basics</a></li>
+                            <li><a href="smart-contracts.html" class="active">Smart Contracts</a></li>
+                            <li><a href="crypto-security.html">Crypto Security</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../resources.html">Resources</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Article Header -->
+        <article class="article-header">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../index.html">Home</a> &raquo; <a href="smart-contracts.html">Smart Contracts</a>
+                </div>
+                <h1>Smart Contracts: Code as Law</h1>
+                <div class="article-meta">
+                    <span class="author">By Maya Patel</span>
+                    <span class="date">Posted on <time datetime="2023-06-02">June 2, 2023</time></span>
+                    <span class="read-time">12 min read</span>
+                </div>
+                <div class="tags">
+                    <span class="tag">smart contracts</span>
+                    <span class="tag">solidity</span>
+                    <span class="tag">ethereum</span>
+                </div>
+            </div>
+        </article>
+        
+        <!-- Article Content -->
+        <article class="article-content">
+            <div class="container">
+                <figure class="article-image">
+                    <img src="../images/image5.png" alt="Smart contract code on Ethereum blockchain">
+                    <figcaption>Ethereum smart contract code visualized</figcaption>
+                </figure>
+                
+                <section>
+                    <h2>What Are Smart Contracts?</h2>
+                    <p>Smart contracts are self-executing contracts with the terms of the agreement between buyer and seller being directly written into lines of code. They were first proposed by Nick Szabo in 1994 and became practical with the advent of blockchain technology.</p>
+                    
+                    <div class="feature-box">
+                        <h3>Key Characteristics:</h3>
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <i class="fas fa-robot"></i>
+                                <h4>Self-executing</h4>
+                                <p>Automatically execute when conditions are met</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-shield-alt"></i>
+                                <h4>Tamper-proof</h4>
+                                <p>Cannot be changed once deployed</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-network-wired"></i>
+                                <h4>Decentralized</h4>
+                                <p>Run across blockchain nodes</p>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-file-contract"></i>
+                                <h4>Transparent</h4>
+                                <p>Code and transactions are visible</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h3>How Smart Contracts Work</h3>
+                    <p>Smart contracts follow a simple "if/when...then..." logic that is deployed to a blockchain. When predetermined conditions are met, the contract executes the corresponding actions.</p>
+                    
+                    <div class="interactive-diagram">
+                        <h4>Smart Contract Lifecycle</h4>
+                        <div class="diagram-steps">
+                            <div class="step">
+                                <div class="step-number">Phase 1</div>
+                                <div class="step-content">
+                                    <h5>Contract Creation</h5>
+                                    <p>Developer writes and deploys contract code to blockchain</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">Phase 2</div>
+                                <div class="step-content">
+                                    <h5>Contract Address</h5>
+                                    <p>Contract gets a unique blockchain address</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">Phase 3</div>
+                                <div class="step-content">
+                                    <h5>Interaction</h5>
+                                    <p>Users and other contracts can interact with it</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">Phase 4</div>
+                                <div class="step-content">
+                                    <h5>Execution</h5>
+                                    <p>Conditions trigger automatic execution</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Writing Smart Contracts in Solidity</h2>
+                    <p>Solidity is the most popular language for writing Ethereum smart contracts. It's a statically-typed language with syntax similar to JavaScript.</p>
+                    
+                    <div class="code-block">
+                        <h4>Basic Smart Contract Example</h4>
+                        <pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract SimpleStorage {
+    // State variable stored on blockchain
+    uint storedData;
+    
+    // Function to set the value
+    function set(uint x) public {
+        storedData = x;
+    }
+    
+    // Function to get the value
+    function get() public view returns (uint) {
+        return storedData;
+    }
+}</code></pre>
+                    </div>
+                    
+                    <h3>Key Solidity Concepts</h3>
+                    
+                    <div class="concept-cards">
+                        <div class="concept-card">
+                            <h4>State Variables</h4>
+                            <p>Permanently stored in contract storage</p>
+                            <pre><code class="language-solidity">uint public count = 0;</code></pre>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <h4>Functions</h4>
+                            <p>Executable units of code</p>
+                            <pre><code class="language-solidity">function increment() public {
+    count += 1;
+}</code></pre>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <h4>Modifiers</h4>
+                            <p>Change function behavior</p>
+                            <pre><code class="language-solidity">modifier onlyOwner() {
+    require(msg.sender == owner);
+    _;
+}</code></pre>
+                        </div>
+                        
+                        <div class="concept-card">
+                            <h4>Events</h4>
+                            <p>Logs for external consumers</p>
+                            <pre><code class="language-solidity">event ValueChanged(uint newValue);
+
+function set(uint x) public {
+    storedData = x;
+    emit ValueChanged(x);
+}</code></pre>
+                        </div>
+                    </div>
+                    
+                    <h3>Gas and Optimization</h3>
+                    <p>Every operation in Ethereum costs gas, which is paid in ETH. Optimizing gas usage is crucial.</p>
+                    
+                    <div class="comparison-table">
+                        <h4>Gas Costs for Common Operations</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Operation</th>
+                                    <th>Gas Cost</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SSTORE (new value)</td>
+                                    <td>20,000</td>
+                                    <td>Writing to storage</td>
+                                </tr>
+                                <tr>
+                                    <td>SSTORE (existing value)</td>
+                                    <td>2,900</td>
+                                    <td>Updating storage</td>
+                                </tr>
+                                <tr>
+                                    <td>CALL</td>
+                                    <td>700</td>
+                                    <td>Basic call operation</td>
+                                </tr>
+                                <tr>
+                                    <td>CREATE</td>
+                                    <td>32,000</td>
+                                    <td>Creating a new contract</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2>Smart Contract Security</h2>
+                    <p>Security is critical as smart contracts handle real value. Common vulnerabilities include:</p>
+                    
+                    <div class="vulnerability-list">
+                        <div class="vulnerability">
+                            <h4>Reentrancy Attacks</h4>
+                            <p>When a contract makes an external call before resolving its state, allowing recursive calls.</p>
+                            <div class="code-block">
+                                <pre><code class="language-solidity">// Vulnerable code
+function withdraw() public {
+    require(balances[msg.sender] > 0);
+    (bool success, ) = msg.sender.call{
+        value: balances[msg.sender]
+    }("");
+    require(success);
+    balances[msg.sender] = 0;
+}</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="vulnerability">
+                            <h4>Integer Overflow/Underflow</h4>
+                            <p>When arithmetic operations exceed maximum or minimum values.</p>
+                            <div class="code-block">
+                                <pre><code class="language-solidity">// Before Solidity 0.8.0
+uint8 x = 255;
+x++; // x is now 0 (overflow)</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="security-tips">
+                        <h3>Security Best Practices</h3>
+                        <ul>
+                            <li>Use checked math (Solidity 0.8.0+) or SafeMath</li>
+                            <li>Follow the checks-effects-interactions pattern</li>
+                            <li>Use established libraries like OpenZeppelin</li>
+                            <li>Get professional audits for production contracts</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="article-actions">
+                    <div class="share-buttons">
+                        <span>Share this article:</span>
+                        <a href="#" class="social-share twitter" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-share linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-share reddit" aria-label="Share on Reddit"><i class="fab fa-reddit"></i></a>
+                    </div>
+                    <div class="article-nav">
+                        <a href="blockchain-basics.html" class="btn prev-article"><i class="fas fa-arrow-left"></i> Previous: Blockchain Basics</a>
+                        <a href="crypto-security.html" class="btn next-article">Next: Crypto Security <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </section>
+                
+                <section class="comments-section">
+                    <h2>Discussion</h2>
+                    <div id="disqus_thread"></div>
+                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                </section>
+            </div>
+        </article>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Blockchain Explorer</h3>
+                    <p>Providing technical deep dives into blockchain technology since 2023.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="smart-contracts.html">Articles</a></li>
+                        <li><a href="../resources.html">Resources</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Blockchain Explorer. All rights reserved.</p>
+                <p class="disclaimer">This site is for educational purposes only. Not financial advice.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="../js/main.js"></script>
+    
+   
+</body>
+</html>
